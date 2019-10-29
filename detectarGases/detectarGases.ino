@@ -35,8 +35,8 @@ void setup() {
 // ----------------------------------------------------
 void loop() {
    //SHOW SENSOR DATA
-   sensorUno.dimeloTodo();
-   emisora.emitirValores(sensorUno.dimeValorGas(),sensorUno.dimeTemperatura());
+   sensorUno.muestrameEnElSerial();
+   emisora.emitirValoresGasesIrritantes(sensorUno.dimeValorGasesIrritantes(),sensorUno.dimeTemperatura());
    delay(3000);
 } // ()
 // ----------------------------------------------------

@@ -22,9 +22,9 @@
     //ID
     int idSensor;
     //Unknow value, but it's must the pressure or gas value
-    int unknow1;
+    int valorGasesIrritantes;
     //It's the temperature
-    int temperatura;
+    int valorTemperatura;
     //It's the humidity
     int humedad;
     //Unknow value
@@ -73,12 +73,12 @@
         //Give unknow value
         if(j == 1)
         {
-          unknow1 = sensorData[j]; //valor supuesto gas
+          valorGasesIrritantes = sensorData[j]; //valor supuesto gas
         }
         //Give the temperature value
         if(j == 2)
         {
-          temperatura = sensorData[j];
+          valorTemperatura = sensorData[j];
         }
         //Give the humidity value
         if(j == 3)
@@ -144,28 +144,30 @@
     //----------------------------------------------------------------------
     // Function that orders the values returned by the gas sensor
     //----------------------------------------------------------------------
-    void dimeloTodo()
+    void muestrameEnElSerial()
     {
       // coge el valor sensorData[] y lo separa
       leerSensor();
       Serial.println("---------- DATA OF THE SENSOR ----------");
       Serial.print("The id of the sensor is: ");
       Serial.println(idSensor);
+      Serial.print("The gas value is: ");
+      Serial.println(valorGasesIrritantes);
       Serial.print("The temperature is: ");
-      Serial.println(temperatura);
+      Serial.println(valorTemperatura);
       Serial.print("The humidity is: ");
       Serial.println(humedad);
       Serial.println("The other values are unknow...");
     }
 
-    int dimeValorGas()
+    int dimeValorGasesIrritantes()
     {
-      return unknow1;
+      return valorGasesIrritantes;
     }
     
     int dimeTemperatura()
     {
-      return temperatura;
+      return valorTemperatura;
     }
 
     

@@ -103,10 +103,10 @@
     //-------------------------------------------------------------------
     //Función para emitir el valor de la temperatura
     //-------------------------------------------------------------------
-    void emitirValores(int valorGas, int temperatura)
+    void emitirValoresGasesIrritantes(int valorGasesIrritantes, int valorTemperatura)
     {
       
-       BLEBeacon elBeacon( beaconUUID, valorGas, temperatura, 73 );
+       BLEBeacon elBeacon( beaconUUID, valorGasesIrritantes, valorTemperatura, 73 );
        elBeacon.setManufacturer( 0x004c ); // aple id
        Bluefruit.Advertising.setBeacon( elBeacon );
     }
