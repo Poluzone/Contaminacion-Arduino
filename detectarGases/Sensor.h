@@ -8,6 +8,18 @@
  * 
  */
 
+ //SN [XXXXXXXXXXXX], 
+ //PPB [0 : 999999], 
+ //TEMP [-99 : 99], 
+ //RH [0 : 99], 
+ //RawSensor[ADCCount], 
+ //TempDigital, 
+ //RHDigital, 
+ //Day [0 : 99], 
+ //Hour [0 : 23], 
+ //Minute [0 : 59], 
+ //Second [0 : 59]
+
 #ifndef Sensor_h
 #define Sensor_h
  
@@ -19,27 +31,27 @@
     long baudios;
     int sensorData [11];
     //Values of the sensor
-    //ID
+    //Serial number
     int idSensor;
-    //Unknow value, but it's must the pressure or gas value
+    //PPB 
     int valorGasesIrritantes;
     //It's the temperature
     int valorTemperatura;
     //It's the humidity
     int humedad;
-    //Unknow value
+    //Raw Sensor
     /*int unknow2;
-    //Unknow value
+    //It's the digital temperature
     int unknow3;
-    //Unknow value
+    //It's the digital humidity
     int unknow4;
-    //Unknow value
+    //Day
     int unknow5;
-    //Unknow value
+    //Hour
     int unknow6;
-    //Unknow value
+    //Minute
     int unknow7;
-    //Unknow value
+    //Second
     int unknow8; */
     
   // Constructor y metodos
