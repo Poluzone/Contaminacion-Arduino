@@ -64,7 +64,8 @@
     void inicializar()
     { 
       Serial.begin(baudios);
-      while ( !Serial ) delay(10);
+      //Comentamos el while que ejecutará el sensor al abrir el Serial
+      //while ( !Serial ) delay(10);
       // Serial 1
       Serial1.begin(baudios);
     }
@@ -73,7 +74,7 @@
     void leerSensor()
     {
       Serial1.print('\r'); // Inicia una lectura del sensor. Ahora hay que espera a que nos envíe algo de vuelta!
-      //Serial.println("Lectura del sensor iniciada...esperando...");
+      Serial.println("Lectura del sensor iniciada...esperando...");
       Serial1InParser();
       for (int j = 0; j<11; j++)
       {

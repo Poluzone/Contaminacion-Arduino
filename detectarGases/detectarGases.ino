@@ -37,7 +37,7 @@ void loop() {
    //SHOW SENSOR DATA
    sensorUno.muestrameEnElSerial();
    emisora.emitirValoresGasesIrritantes(sensorUno.dimeValorGasesIrritantes(),sensorUno.dimeTemperatura());
-   delay(3000);
+   delay(30000);
 } // ()
 // ----------------------------------------------------
 // ----------------------------------------------------

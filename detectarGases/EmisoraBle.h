@@ -101,7 +101,7 @@
     } // startAdvertising ()
 
     //-------------------------------------------------------------------
-    //Función para emitir el valor de la temperatura
+    //Función para emitir el valor del gas y la temperatura
     //-------------------------------------------------------------------
     void emitirValoresGasesIrritantes(int valorGasesIrritantes, int valorTemperatura)
     {
@@ -109,6 +109,7 @@
        BLEBeacon elBeacon( beaconUUID, valorGasesIrritantes, valorTemperatura, 73 );
        elBeacon.setManufacturer( 0x004c ); // aple id
        Bluefruit.Advertising.setBeacon( elBeacon );
+
     }
 	 
  };
