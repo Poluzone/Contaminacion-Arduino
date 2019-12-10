@@ -80,10 +80,6 @@
        //
        Serial.println( " Bluefruit.Advertising.setBeacon( elBeacon ); ");
     
-       /*uint8_t beaconUUID[16] = {
-         'E', 'Q', 'U', 'I', 'P', 'O', '-', '3',
-         'X', 'U', 'R', 'O', 'D', 'I', 'M', 'I'
-         };*/
        BLEBeacon elBeacon( beaconUUID, 12, 34, 73 );
        elBeacon.setManufacturer( 0x004c ); // aple id
        Bluefruit.Advertising.setBeacon( elBeacon );

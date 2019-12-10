@@ -38,22 +38,7 @@
     //It's the temperature
     int valorTemperatura;
     //It's the humidity
-    int humedad;
-    //Raw Sensor
-    /*int unknow2;
-    //It's the digital temperature
-    int unknow3;
-    //It's the digital humidity
-    int unknow4;
-    //Day
-    int unknow5;
-    //Hour
-    int unknow6;
-    //Minute
-    int unknow7;
-    //Second
-    int unknow8; */
-    
+    int humedad;    
   // Constructor y metodos
   public:
     Sensor(long baudios_)
@@ -70,77 +55,21 @@
       Serial1.begin(baudios);
     }
 
-    // Read of the sensor and save variables
+    //Función que lee del sensor y guarda los valores en las variables globales
     void leerSensor()
     {
       Serial1.print('\r'); // Inicia una lectura del sensor. Ahora hay que espera a que nos envíe algo de vuelta!
       Serial.println("Lectura del sensor iniciada...esperando...");
       Serial1InParser();
-      for (int j = 0; j<11; j++)
-      {
-        //Give id value
-        if(j == 0)
-        {
-          idSensor = sensorData[j];
-        }
-        //Give unknow value
-        if(j == 1)
-        {
-          valorGasesIrritantes = sensorData[j]; //valor supuesto gas
-        }
-        //Give the temperature value
-        if(j == 2)
-        {
-          valorTemperatura = sensorData[j];
-        }
-        //Give the humidity value
-        if(j == 3)
-        {
-          humedad = sensorData[j];
-        }
-        //Give unknow value
-        /*if(j == 4)
-        {
-          unknow2 = sensorData[j];
-        }
-        //Give unknow value
-        if(j == 5)
-        {
-          unknow3 = sensorData[j];
-        }
-        //Give unknow value
-        if(j == 6)
-        {
-          unknow4 = sensorData[j];
-        }
-        //Give unknow value
-        if(j == 7)
-        {
-          unknow5 = sensorData[j];
-        }
-        //Give unknow value
-        if(j == 8)
-        {
-          unknow6 = sensorData[j];
-        }
-        //Give unknow value
-        if(j == 9)
-        {
-          unknow7 = sensorData[j];
-        }
-        //Give unknow value
-        if(j == 10)
-        {
-          unknow8 = sensorData[j];
-        }*/
-        Serial.println(sensorData[j]);
-      }
-      //for (int j=0; j<11; j++) {Serial.println(sensorData[j]);}
-      //Serial.println("EL SENSOR A LEÍDO");
+      //Guardamos los valores en su variable correspondiente
+      idSensor = sensorData[0];
+      valorGasesIrritantes = sensorData[1];
+      valorTemperatura = sensorData[2];
+      humedad = sensorData[3];
     }
 
     //////////////////////////////////////////////////////////////////////////
-    // Recive un string en sequencia ASCII y lo parsea
+    // Recibe un string en sequencia ASCII y lo parsea
     //////////////////////////////////////////////////////////////////////////
 
     void Serial1InParser(void)
@@ -155,7 +84,7 @@
     }
 
     //----------------------------------------------------------------------
-    // Function that orders the values returned by the gas sensor
+    // Función para devolver en el serial lo que está recogiendo el sensor
     //----------------------------------------------------------------------
     void muestrameEnElSerial()
     {
@@ -173,11 +102,18 @@
       Serial.println("The other values are unknow...");
     }
 
+    //Devuelve el valor de los gases irritantes recogido
+    /**
+     * dimeValorGasesIrritantes() --> N
+     */
     int dimeValorGasesIrritantes()
     {
       return valorGasesIrritantes;
     }
-    
+   //Devuelve el valor de la temperatura recogida
+   /**
+     * dimeTemperatura() --> N
+     */
     int dimeTemperatura()
     {
       return valorTemperatura;
